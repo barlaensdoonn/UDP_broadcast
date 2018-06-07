@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # UDP socket multicasting - receive with socketserver
 # 12/11/17
+# updated 6/7/18
 
 # code below taken directly from python docs
 # https://docs.python.org/3.4/library/socketserver.html
@@ -27,4 +28,5 @@ class MyUDPHandler(socketserver.BaseRequestHandler):
 if __name__ == '__main__':
     hostport = ('', 9999)
     server = socketserver.UDPServer(hostport, MyUDPHandler)
+    print('listening for UDP broadcast messages...\n')
     server.serve_forever()
